@@ -3,5 +3,6 @@ version: '3.8'
 services:
   homepage:
     image: overpowerman/overpowerman-homepage:0.0.1
+    platform: linux/amd64
     ports:
       - "4000:4000"
