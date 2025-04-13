@@ -32,6 +32,8 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+    volumes:
+      - /kafka-data/kafka1-controller-logs:/tmp/kraft-combined-logs
 
   controller-2:
     image: ${IMAGE}
@@ -49,6 +51,8 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+    volumes:
+      - /kafka-data/kafka2-controller-logs:/tmp/kraft-combined-logs
 
   controller-3:
     image: ${IMAGE}
@@ -66,6 +70,8 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+    volumes:
+      - /kafka-data/kafka3-controller-logs:/tmp/kraft-combined-logs
 
   kafka-1:
     image: ${IMAGE}
@@ -90,6 +96,8 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+    volumes:
+      - /kafka-data/kafka1-kraft-logs:/tmp/kraft-combined-logs
     depends_on:
       - controller-1
       - controller-2
@@ -118,6 +126,8 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+    volumes:
+      - /kafka-data/kafka2-kraft-logs:/tmp/kraft-combined-logs
     depends_on:
       - controller-1
       - controller-2
@@ -146,6 +156,8 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+    volumes:
+      - /kafka-data/kafka1-kraft-logs:/tmp/kraft-combined-logs
     depends_on:
       - controller-1
       - controller-2
