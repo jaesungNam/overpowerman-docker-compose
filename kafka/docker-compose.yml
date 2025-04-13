@@ -100,7 +100,7 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
-      - /home/overpowerman//kafka-data/kafka1-kraft-logs:/tmp/kraft-combined-logs
+      - /home/overpowerman/kafka-data/kafka1-kraft-logs:/tmp/kraft-combined-logs
     user: "1000:1000" # 리눅스 호스트 사용자 및 그룹 id, 호스트 머신에서 id -u, id -g 로 확인 가능
     depends_on:
       - controller-1
@@ -162,7 +162,7 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
-      - /home/overpowerman/kafka-data/kafka1-kraft-logs:/tmp/kraft-combined-logs
+      - /home/overpowerman/kafka-data/kafka3-kraft-logs:/tmp/kraft-combined-logs
     user: "1000:1000" # 리눅스 호스트 사용자 및 그룹 id, 호스트 머신에서 id -u, id -g 로 확인 가능
     depends_on:
       - controller-1
